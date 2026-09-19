@@ -1,0 +1,32 @@
+# ── Source control ────────────────────────────────────────────────────────────
+.git/
+.gitignore
+
+# ── Python dev artefacts ─────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+htmlcov/
+.coverage
+
+# ── Node / Frontend dev ───────────────────────────────────────────────────────
+node_modules/
+frontend/.vite/
+*.tsbuildinfo
+
+# ── Secrets ───────────────────────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── Runtime data ─────────────────────────────────────────────────────────────
+chroma_data/
+uploads/
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
