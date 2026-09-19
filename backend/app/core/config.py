@@ -3,7 +3,8 @@
 from __future__ import annotations
 
 from functools import lru_cache
-from typing import List
+from pathlib import Path
+from typing import List, Set
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -44,6 +45,12 @@ class Settings(BaseSettings):
     chunk_size: int = 512
     chunk_overlap: int = 64
     max_upload_mb: int = 50
+
+    # ── Document storage ──────────────────────────────────────────────────────
+    # Path is relative to the working directory (i.e. the backend/ directory).
+    # Override via UPLOAD_DIR env var.  Do NOT point at a source directory.
+    upload_dir: Path = Path("uploads")
+    allowed_extensions: Set[str] = {".pdf", ".txt"}
 
     # ── Retrieval ─────────────────────────────────────────────────────────────
     retrieval_top_k: int = 5
